@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "higgsfield": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/higgsfiled/src/index.js"],
+      "env": {
+        "HF_CREDENTIALS": "YOUR_KEY_ID:YOUR_KEY_SECRET"
+      }
+    }
+  }
+}
