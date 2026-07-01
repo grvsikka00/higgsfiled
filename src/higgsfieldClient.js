@@ -1,8 +1,11 @@
-const { createHiggsfieldClient } = require('@higgsfield/client/v2');
+const { HiggsfieldClient } = require('@higgsfield/client');
 
 function resolveCredentials() {
   if (process.env.HF_CREDENTIALS) {
-    return { credentials: process.env.HF_CREDENTIALS };
+    const [apiKey, apiSecret] = process.env.HF_CREDENTIALS.split(':');
+    if (apiKey && apiSecret) {
+      return { apiKey, apiSecret };
+    }
   }
   if (process.env.HF_API_KEY && process.env.HF_API_SECRET) {
     return { apiKey: process.env.HF_API_KEY, apiSecret: process.env.HF_API_SECRET };
@@ -13,7 +16,7 @@ function resolveCredentials() {
 }
 
 function getHiggsfieldClient() {
-  return createHiggsfieldClient({
+  return new HiggsfieldClient({
     ...resolveCredentials(),
     baseURL: process.env.HF_BASE_URL || 'https://platform.higgsfield.ai',
   });
