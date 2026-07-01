@@ -1,0 +1,13 @@
+{
+  "name": "higgsfiled",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Higgsfield API integration",
+  "type": "commonjs",
+  "scripts": {
+    "test:connection": "node scripts/test-connection.js"
+  },
+  "dependencies": {
+    "@higgsfield/client": "^0.2.1"
+  }
+}
