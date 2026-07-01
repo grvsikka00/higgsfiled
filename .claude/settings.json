@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "higgsfield": {
+      "command": "node",
+      "args": ["src/index.js"],
+      "env": {
+        "HF_CREDENTIALS": "f30ea5d0-7893-4240-aff2-ace01b456113:99150520df1fd9cef4ad4842d00df816bdf0e894cfa67f0ce4a3ef714f8bef0c"
+      }
+    }
+  }
+}
